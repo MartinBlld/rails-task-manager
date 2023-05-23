@@ -1,0 +1,14 @@
+
+<div>
+  <% @list.each do |item| %>
+   <%= item.title %>
+  <%= link_to "détail", task_path(item["id"]) %>
+  <%= link_to "edit", edit_path(item["id"]) %>
+  <%= link_to "Delete",task_path(item["id"]),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+  <div style="margin:10px;">
+  </div>
+  <% end %>
+<%= link_to "Create", new_path %>
+</div>
